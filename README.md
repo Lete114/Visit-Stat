@@ -13,7 +13,6 @@
 ```bash
 mkdir Visit-Statis                    # 创建目录
 cd Visit-Statis                       # 进入目录
-npm init -y                           # 初始化 npm
 npm install visit-statis --save       # 安装 Visit-Statis
 touch index.js .env                   # 创建 index.js 以及 .env(环境配置文件)
 ```
@@ -32,7 +31,6 @@ require('visit-statis').server()
 ```bash
 mkdir Visit-Statis                    # 创建目录
 cd Visit-Statis                       # 进入目录
-npm init -y                           # 初始化 npm
 npm install visit-statis --save       # 安装 Visit-Statis
 touch index.js .env                   # 创建 index.js 以及 .env(环境配置文件)
 ```
