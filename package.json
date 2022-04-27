@@ -1,0 +1,50 @@
+{
+  "name": "visit-statis",
+  "version": "1.0.0-beta.0",
+  "description": "Website visitor statistics system | 网站访问量统计系统",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx rollup -w -c rollup/dev.js",
+    "build": "npx rollup -c rollup/prod.js",
+    "start": "node start.js",
+    "start:hot": "nodemon start.js",
+    "lint": "npx eslint . && npx prettier --check .",
+    "lint:fix": "npx eslint --fix . && npx prettier --check --write ."
+  },
+  "dependencies": {
+    "body-data": "^1.0.5",
+    "dotenv": "^16.0.0",
+    "get-user-ip": "^1.0.0",
+    "mongodb": "^4.5.0",
+    "output-line": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "eslint": "^8.14.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lete114/Visit-Statis.git"
+  },
+  "keywords": [
+    "statistics",
+    "visit",
+    "counter",
+    "website",
+    "site"
+  ],
+  "author": "Lete乐特",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lete114/Visit-Statis/issues"
+  },
+  "homepage": "https://github.com/Lete114/Visit-Statis#readme"
+}
