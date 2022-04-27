@@ -37,7 +37,7 @@ npm install visit-statis --save       # 安装 Visit-Statis
 touch index.js .env                   # 创建 index.js 以及 .env(环境配置文件)
 ```
 
-> 无服务器可以不需要`.env`环境配置文件，一半无服务器平台有专门的环境配置选项(每个平台各有不同)
+> 无服务器可以不需要`.env`环境配置文件，一般无服务器平台有专门的环境配置选项(每个平台各有不同)
 
 编辑`index.js`文件，编辑好后，保存并推送到无服务器平台即可
 
