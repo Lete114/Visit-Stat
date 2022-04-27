@@ -6,7 +6,7 @@ export default {
   input: 'client.js',
   output: {
     format: 'iife',
-    file: './dist/visit-statis.js'
+    file: './dist/visit-stat.js'
   },
 
   plugins: [

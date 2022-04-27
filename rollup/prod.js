@@ -7,11 +7,11 @@ export default {
   output: [
     {
       format: 'iife',
-      file: './dist/visit-statis.js'
+      file: './dist/visit-stat.js'
     },
     {
       format: 'iife',
-      file: './dist/visit-statis.min.js',
+      file: './dist/visit-stat.min.js',
       plugins: [terser()]
     }
   ],

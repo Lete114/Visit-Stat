@@ -1,6 +1,6 @@
 {
-  "name": "visit-statis",
-  "version": "1.0.0-beta.0",
+  "name": "visit-stat",
+  "version": "1.0.0-beta.1",
   "description": "Website visitor statistics system | 网站访问量统计系统",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "body-data": "^1.0.5",
     "dotenv": "^16.0.0",
     "get-user-ip": "^1.0.0",
+    "ioredis": "^5.0.4",
     "mongodb": "^4.5.0",
     "output-line": "^1.0.1"
   },
@@ -32,19 +33,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lete114/Visit-Statis.git"
+    "url": "git+https://github.com/Lete114/Visit-Stat.git"
   },
   "keywords": [
     "statistics",
-    "visit",
+    "visit-stat",
+    "visit-statis",
     "counter",
     "website",
+    "visit",
     "site"
   ],
   "author": "Lete乐特",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lete114/Visit-Statis/issues"
+    "url": "https://github.com/Lete114/Visit-Stat/issues"
   },
-  "homepage": "https://github.com/Lete114/Visit-Statis#readme"
+  "homepage": "https://github.com/Lete114/Visit-Stat#readme"
 }
