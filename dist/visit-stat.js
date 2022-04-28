@@ -9,7 +9,8 @@
 
     window[id] = function (data) {
       for (var key in data) {
-        document.getElementById('vs_' + key).innerText = data[key];
+        var dom = document.getElementById('vs_' + key);
+        if (dom) dom.innerText = data[key];
       }
 
       script.parentNode.removeChild(script);

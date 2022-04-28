@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window[id] = function (data) {
     for (const key in data) {
-      document.getElementById('vs_' + key).innerText = data[key]
+      const dom = document.getElementById('vs_' + key)
+      if (dom) dom.innerText = data[key]
     }
     script.parentNode.removeChild(script)
   }
