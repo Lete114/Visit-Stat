@@ -1,6 +1,6 @@
 {
   "name": "visit-stat",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "Website visitor statistics system | 网站访问量统计系统",
   "main": "index.js",
   "scripts": {
