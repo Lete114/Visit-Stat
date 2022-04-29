@@ -4,7 +4,7 @@ const bodyData = require('body-data')
 
 const counterHandler = require('./database/index')
 
-const { VS_DOMAIN } = process.env
+const { VS_DOMAIN, VS_HEADERS } = process.env
 
 /* eslint-disable max-statements */
 module.exports = async (req, res) => {
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
     const url = new URL(referer)
 
     // 获取用户 IP
-    const ip = GetUserIP(req)
+    const ip = GetUserIP(req, (VS_HEADERS || '').split(','))
 
     // 获取 jsonp 回调方法
     const data = await bodyData(req)
