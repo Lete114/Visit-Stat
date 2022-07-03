@@ -18,6 +18,8 @@ module.exports = async (ip, referer) => {
         return await require('./storage/mongodb')(ip, referer)
       case 'REDIS':
         return await require('./storage/redis')(ip, referer)
+      case 'DETA':
+        return await require('./storage/deta')(ip, referer)
       default:
         throw new Error('No matching database found')
     }
