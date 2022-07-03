@@ -2,7 +2,7 @@ require('output-line')()
 const GetUserIP = require('get-user-ip')
 const bodyData = require('body-data')
 
-const counterHandler = require('./database/index')
+const counterHandler = require('./database/adapter')
 
 const { VS_DOMAIN, VS_HEADERS } = process.env
 
