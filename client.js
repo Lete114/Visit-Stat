@@ -1,5 +1,7 @@
+import unique from 'simple-unique'
+
 document.addEventListener('DOMContentLoaded', function () {
-  const id = 'VS_' + Math.random().toString(36).slice(2)
+  const id = 'VS_' + unique()
   const script = document.createElement('script')
   script.src = '//localhost:6870?p=' + id
   script.referrerPolicy = 'no-referrer-when-downgrade'

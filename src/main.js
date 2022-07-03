@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
     }
 
     // 统计处理
-    const counter = await counterHandler(ip, url.pathname)
+    const counter = await counterHandler(ip, referer)
 
     // eslint-disable-next-line no-console
     console.log({ ip, ...counter, ua: req.headers['user-agent'] })

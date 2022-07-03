@@ -7,17 +7,17 @@ function indexHandler(params) {
 
 const { VS_DB_TYPE, VS_DB_URL } = process.env
 
-module.exports = async (ip, path) => {
+module.exports = async (ip, referer) => {
   try {
     if (!VS_DB_URL) throw new Error('No environment variables set "VS_DB_URL"')
-    path = indexHandler(path)
+    referer = indexHandler(referer).replace(/^https?:\/\//, '')
     const db = (VS_DB_TYPE || '').toUpperCase()
 
     switch (db) {
       case 'MONGODB':
-        return await require('./storage/mongodb')(ip, path)
+        return await require('./storage/mongodb')(ip, referer)
       case 'REDIS':
-        return await require('./storage/redis')(ip, path)
+        return await require('./storage/redis')(ip, referer)
       default:
         throw new Error('No matching database found')
     }

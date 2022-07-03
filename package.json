@@ -4,12 +4,12 @@
   "description": "Website visitor statistics system | 网站访问量统计系统",
   "main": "index.js",
   "scripts": {
-    "dev": "npx rollup -w -c rollup/dev.js",
-    "build": "npx rollup -c rollup/prod.js",
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
     "start": "node start.js",
     "start:hot": "nodemon start.js",
-    "lint": "npx eslint . && npx prettier --check .",
-    "lint:fix": "npx eslint --fix . && npx prettier --check --write ."
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint --fix . && prettier --check --write ."
   },
   "dependencies": {
     "body-data": "^1.0.5",
@@ -17,12 +17,14 @@
     "get-user-ip": "^1.0.0",
     "ioredis": "^5.0.4",
     "mongodb": "^4.5.0",
-    "output-line": "^1.0.1"
+    "output-line": "^1.0.1",
+    "simple-unique": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "eslint": "^8.14.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
