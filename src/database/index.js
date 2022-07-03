@@ -11,18 +11,12 @@ module.exports = async (ip, referer) => {
   try {
     if (!VS_DB_URL) throw new Error('No environment variables set "VS_DB_URL"')
     referer = indexHandler(referer).replace(/^https?:\/\//, '')
-    const db = (VS_DB_TYPE || '').toUpperCase()
+    const db = (VS_DB_TYPE || '').toLowerCase()
 
-    switch (db) {
-      case 'MONGODB':
-        return await require('./storage/mongodb')(ip, referer)
-      case 'REDIS':
-        return await require('./storage/redis')(ip, referer)
-      case 'DETA':
-        return await require('./storage/deta')(ip, referer)
-      default:
-        throw new Error('No matching database found')
+    if (['mongodb', 'redis', 'deta'].includes(db)) {
+      return await require('./storage/' + db)(ip, referer)
     }
+    throw new Error('No matching database found')
   } catch (error) {
     /* eslint-disable no-console */
     console.error('Database connect fault')
