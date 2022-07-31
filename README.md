@@ -47,4 +47,4 @@ require('visit-stat').server()
 
 > 如果你也写了教程，可在仓库 issues 申请，我会将其添加到 README 中
 
-- [Visit-Stat 使用教程](https://www.xsnetw.cf/posts/54175/)
+- [Visit-Stat 使用教程](https://blog.xsnetw.cf/posts/54175/)
