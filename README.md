@@ -7,6 +7,11 @@
 - 存储[redis, mongodb]
 - Nodejs 编写，多平台部署(`Server`,`ServerLess`)
 
+## 免费存储
+
+- [Redis](https://upstash.com/)
+- [Mongodb](https://mongodb.com/)
+
 ## 客户端
 
 将 [dist/visit-stat.min.js](dist/visit-stat.min.js) 内的 `//localhost:6870` 服务端地址替换为你自己部署的服务端地址，然后在你的网站上引用即可
@@ -47,4 +52,4 @@ require('visit-stat').server()
 
 > 如果你也写了教程，可在仓库 issues 申请，我会将其添加到 README 中
 
-- [Visit-Stat 使用教程](https://blog.xsnetw.cf/posts/54175/)
+- [Visit-Stat 使用教程](https://www.xsnetw.cf/posts/54175/)
