@@ -47,9 +47,3 @@ require('visit-stat').server()
 // ServerLess 可参考 Vercel 分支
 // module.exports = require('visit-stat').main
 ```
-
-## 部署教程
-
-> 如果你也写了教程，可在仓库 issues 申请，我会将其添加到 README 中
-
-- [Visit-Stat 使用教程](https://blog.xsnetw.cf/posts/54175/)
