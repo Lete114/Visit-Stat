@@ -1,38 +1,23 @@
 {
   "name": "visit-stat",
-  "version": "2.0.0",
-  "description": "Website visitor statistics system | 网站访问量统计系统",
+  "version": "3.0.0",
+  "description": "Website visitor statistics",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "start": "node start.js",
-    "start:hot": "nodemon start.js",
-    "lint": "eslint . && prettier --check .",
-    "lint:fix": "eslint --fix . && prettier --check --write ."
+    "lint": "eslint index.js && prettier --check index.js",
+    "lint:fix": "eslint --fix index.js && prettier --check --write index.js"
   },
   "dependencies": {
-    "body-data": "^1.0.5",
+    "body-data": "^1.0.6",
     "deta": "^1.1.0",
-    "dotenv": "^16.0.0",
-    "get-user-ip": "^1.0.0",
-    "ioredis": "^5.0.4",
-    "mongodb": "^4.5.0",
-    "output-line": "^1.0.1",
-    "simple-unique": "^1.2.0"
+    "dotenv": "^16.0.3",
+    "get-user-ip": "^1.0.1",
+    "ioredis": "^5.3.2",
+    "mongodb": "^5.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-env": "^7.16.11",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "eslint": "^8.14.0",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.6.2",
-    "rollup": "^2.70.2",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-serve": "^1.1.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "eslint": "^8.41.0",
+    "prettier": "2.8.8"
   },
   "repository": {
     "type": "git",
@@ -47,7 +32,7 @@
     "visit",
     "site"
   ],
-  "author": "Lete乐特",
+  "author": "Lete114",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Lete114/Visit-Stat/issues"

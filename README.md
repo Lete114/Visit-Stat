@@ -1,49 +1,77 @@
-## 网站访问量统计系统
+# Visit-Stat
 
-![visitor](https://visitor_badge.deta.dev/?pageID=github.Lete114.Visit-Stat&label=PV)
+- Lightweight
+- Statistics `site_pv`, `site_uv`, `page_pv`, `page_uv`
+- Storages `Deta`, `MongoDB`, `Redis`
+- Support `ServerLess`
 
-- 轻量，简洁
-- 支持 `site_uv`, `site_pv`, `page_pv`
-- 存储[redis, mongodb]
-- Nodejs 编写，多平台部署(`Server`,`ServerLess`)
+## Free Storage
 
-## 免费存储
+- [Deta](https://deta.space)
+- [MongoDB](https://mongodb.com)
+- [Redis](https://upstash.com)
 
-- [Redis](https://upstash.com/)
-- [Mongodb](https://mongodb.com/)
+## Usage
 
-## 客户端
-
-将 [dist/visit-stat.min.js](dist/visit-stat.min.js) 内的 `//localhost:6870` 服务端地址替换为你自己部署的服务端地址，然后在你的网站上引用即可
-
-返回的数据会主动寻找标签 id 属性为:`vs_site_uv`, `vs_site_pv`, `vs_page_pv`的标签并替换内容。不懂请看 [public/index.html](public/index.html)
-
-## 服务端
-
-> 服务器需要有 nodejs 运行环境
-
-环境配置文件详细请看 [.env.example](.env.example)
+> The following example uses the install dependency approach to deployment. You can just clone the repository and run `node start.js`.
 
 ```bash
-git clone https://github.com/Lete114/Visit-Stat.git
-cd Visit-Stat
-npm run start # 启动
-
-# 或
-
-mkdir Visit-Stat                      # 创建目录
-cd Visit-Stat                         # 进入目录
-npm install visit-stat --save         # 安装 Visit-Stat
-touch index.js .env                   # 创建 index.js 以及 .env(环境配置文件)
-node index.js # 启动
+mkdir visit-stat
+cd visit-stat
+npm install visit-stat
 ```
+
+Create a new index.js
 
 ```js
 // index.js
-
-// Server
 require('visit-stat').server()
 
-// ServerLess 可参考 Vercel 分支
+// If is ServerLess
 // module.exports = require('visit-stat').main
+```
+
+After successful deployment, you can send requests through the front-end browser to perform access statistics
+
+> support `GET` and `POST` requests
+
+```js
+// The unique identification of the statistics is determined by the referer in the request header.
+// If the referer is `https://example.com` then `{ "site_pv": 2, "site_uv": 1 }`will be returned
+// If referer is `https://example.com/post/xxxx.html` then `{ "page_pv": 2, "page_uv": 1 }`
+// Visits to the root of the site will return site statistics, and visits to sub-pages of the site will return page statistics
+
+// referer: https://example.com
+// You need to set referrerPolicy to get the web page referer correctly, if you don't set referrerPolicy, the referer you get will probably be the root of the website every time.
+fetch('http://localhost:6870', { referrerPolicy: 'no-referrer-when-downgrade' })
+  .then((r) => r.json())
+  .then(console.log)
+// => { "site_pv": 23, "site_uv": 1 }
+
+// referer: https://example.com/post/xxxx.html
+fetch('http://localhost:6870', { referrerPolicy: 'no-referrer-when-downgrade' })
+  .then((r) => r.json())
+  .then(console.log)
+// => { "page_pv": 3, "page_uv": 1 }
+
+// Bulk access to statistical information (Maximum 20 URLs, and the `domain` of these 20 URLs must be the same as the referer, otherwise they will be filtered)
+fetch('http://localhost:4200/visits', {
+  method: 'post',
+  body: JSON.stringify({ urls: ['https://example.com', 'https://example.com/post/xxxx.html'] })
+})
+  .then((r) => r.json())
+  .then(console.log)
+// =>
+//[
+//  {
+//    "url": "https://example.com",
+//    "site_pv": 23,
+//    "site_uv": 1
+//  },
+//  {
+//    "url": "https://example.com/post/xxxx.html",
+//    "page_pv": 3,
+//    "page_uv": 1
+//  }
+// ]
 ```

@@ -1,1 +1,1 @@
-require('./index').server()
+require('.').server()

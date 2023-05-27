@@ -1,5 +1,5 @@
 require('dotenv').config()
-const server = require('./src/server')
-const main = require('./src/main')
+const server = require('./server')
+const main = require('./main')
 
 module.exports = { server, main }

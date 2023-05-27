@@ -1,9 +1,2 @@
-# vscode
-.vscode
-
-# project file
+.space
 node_modules
-.env
-
-
-.vercel

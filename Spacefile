@@ -1,0 +1,10 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: visit-stat
+    src: ./
+    engine: nodejs16
+    primary: true
+    public: true
+    dev: node start.js
+    run: node start.js
