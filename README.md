@@ -11,6 +11,11 @@
 - [MongoDB](https://mongodb.com)
 - [Redis](https://upstash.com)
 
+## Free Deploy
+
+- [Deta](https://github.com/Lete114/Visit-Stat/tree/deta)
+- [Vercel](https://github.com/Lete114/Visit-Stat/tree/vercel)
+
 ## Usage
 
 > The following example uses the install dependency approach to deployment. You can just clone the repository and run `node start.js`.
