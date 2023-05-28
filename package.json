@@ -1,5 +1,5 @@
 {
 	"dependencies": {
-		"visit-stat": "^3.0.0"
+		"visit-stat": "latest"
 	}
 }
