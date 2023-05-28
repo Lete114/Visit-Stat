@@ -1,6 +1,6 @@
 {
   "name": "visit-stat",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Website visitor statistics",
   "main": "index.js",
   "scripts": {
